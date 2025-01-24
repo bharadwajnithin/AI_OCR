@@ -1,0 +1,30 @@
+{% extends "ocr/base.html" %}
+
+{% block content %}
+<div class="result-container">
+    <div class="result-header">
+        <h2>Processed Result</h2>
+        <a href="{% url 'download_pdf' image_upload.pk %}">
+            <button >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download as PDF
+            </button>
+        </a>
+        <a href="{% url 'download_preprocessed_image' image_upload.pk %}">
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                Download Pre-Processed Image
+            </button>
+        </a>
+    </div>
+    <pre id="resultText">{{ image_upload.processed_text }}</pre>
+</div>
+{% endblock %}
