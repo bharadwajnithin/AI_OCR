@@ -1,4 +1,6 @@
-#  you can install some libriers 
+#  you can install some    Libraries 
+
+
 
 Django
 Tessaract
